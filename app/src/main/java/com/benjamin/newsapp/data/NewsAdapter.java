@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class NewsAdapter extends ArrayAdapter<NewsData> {
     public NewsAdapter(@NonNull Context context, int resource, @NonNull ArrayList<NewsData> newsData) {
-        super(context, 0, newsData);
+        super(context, resource, newsData);
     }
 
     @NonNull

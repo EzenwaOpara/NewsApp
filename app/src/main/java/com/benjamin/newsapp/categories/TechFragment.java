@@ -8,13 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.benjamin.newsapp.R;
+import com.benjamin.newsapp.data.NewsAdapter;
+import com.benjamin.newsapp.data.NewsData;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TechFragment extends ListFragment{
+public class TechFragment extends Fragment{
 
 
     public TechFragment() {
@@ -26,16 +31,39 @@ public class TechFragment extends ListFragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_tech, container, false);
+        ListView listView = view.findViewById(R.id.list_item_tech);
+        ArrayList<NewsData> newsData = new ArrayList<>();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                inflater.getContext(),
-                android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.pizzas));
-        setListAdapter(adapter);
+        newsData.add(new NewsData("13 year old boy solves legendary math problem", "3rd May, 2020",
+                R.drawable.boy));
+        newsData.add(new NewsData("Trump encourages healthy living admist novel covid-19 pademic",
+                "4th May, 2020", R.drawable.trump));
+        newsData.add(new NewsData("ACCESS denies closing branches", "4th May, 2020",
+                R.drawable.access));
+        newsData.add(new NewsData("Trump encourages healthy living admist novel covid-19 pademic",
+                "4th May, 2020", R.drawable.trump));
+        newsData.add(new NewsData("ACCESS denies closing branches", "4th May, 2020",
+                R.drawable.access));
+        newsData.add(new NewsData("COVID-19: Bright light at the end of the tunnel",
+                "4th May, 2020", R.drawable.covid));
+        newsData.add(new NewsData("Chikwe declears intention for 2023", "3rd May, 2020",
+                R.drawable.chikwe));
+        newsData.add(new NewsData("Local government donates relief materials", "3rd May, 2020",
+                R.drawable.rice));
+        newsData.add(new NewsData("COVID-19: Bright light at the end of the tunnel",
+                "4th May, 2020", R.drawable.covid));
+        newsData.add(new NewsData("Chikwe declears intention for 2023", "3rd May, 2020",
+                R.drawable.chikwe));
+        newsData.add(new NewsData("Local government donates relief materials", "3rd May, 2020",
+                R.drawable.rice));
+        newsData.add(new NewsData("13 year old boy solves legendary math problem", "3rd May, 2020",
+                R.drawable.boy));
 
-        return super.onCreateView(inflater, container, savedInstanceState);
 
-//        return inflater.inflate(R.layout.fragment_tech, container, false);
+        NewsAdapter adapter = new NewsAdapter(getContext(), R.layout.list_news, newsData);
+        listView.setAdapter(adapter);
+        return view;
     }
 
-}
+    }

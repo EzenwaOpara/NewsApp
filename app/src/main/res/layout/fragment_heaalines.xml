@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".categories.HeadlinesFragment">
 
-    <TextView
+    <ListView
+        android:id="@+id/list_item_headlines"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Headlines Fragment" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

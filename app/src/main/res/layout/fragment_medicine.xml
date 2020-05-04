@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".categories.MedicineFragment">
 
-    <TextView
+    <ListView
+        android:id="@+id/list_item_medicine"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Medicine Fragment" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>
